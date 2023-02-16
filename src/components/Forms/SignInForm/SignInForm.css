@@ -1,0 +1,21 @@
+.Form{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+}
+
+.Form--input{
+    padding: 1.5%;
+    margin: 1% 0 1% 0;
+}
+
+.Form--button{
+    padding: 2%;
+    width: 20%;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(0, 64, 255);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
