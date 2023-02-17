@@ -3,13 +3,15 @@ import React from 'react';
 import { Formik } from 'formik';
 
 const SignInForm = () => {
+    
     return (
         
         <div className='Page'>
         <h1>Registro</h1>
             <Formik
-                initialValues={{ email: '', password: '', name: '' }}
+                initialValues={{ email: '', password: '', name: '' , lastName: '' }}
                 validate={values => {
+                    console.log(values)
                     const errors = {};
 
                     if (!values.name) {
@@ -18,6 +20,10 @@ const SignInForm = () => {
 
                     if(!values.password){
                         errors.password = 'Campo obligatorio';
+                    }
+
+                    if(!values.lastName){
+                        errors.lastName = 'Campo obligatorio';
                     }
 
                     if (!values.email ) {
@@ -57,6 +63,16 @@ const SignInForm = () => {
                             placeholder='Ingrese su nombre'
                         />
                         {errors.name && touched.name && errors.name}
+                        <input
+                            className='Form--input'
+                            type="text"
+                            name="lastName"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.lastName}
+                            placeholder='Ingrese su apellido'
+                        />
+                        {errors.lastName && touched.lastName && errors.lastName}
                         <input
                             className='Form--input'
                             type="email"
